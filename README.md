@@ -1,113 +1,124 @@
-# Virtual Chatroom with Text Detection - Public Repository
+# Text Shield Chatroom - Public Repository
 
 ## 🚀 Project Overview
-This is the **public repository** for the Virtual Chatroom with Text Detection project - a real-time chat application enhanced with intelligent text analysis capabilities. This repository contains essential code, documentation, and open-source components that can be shared with the community.
 
-## ✨ Key Features (Public Components)
-- **Real-time messaging** - WebSocket-based chat functionality
-- **Basic text filtering** - Community-safe content moderation
-- **User management** - Registration and authentication system
-- **Responsive UI** - Mobile-friendly chat interface
-- **Open-source libraries** - Community-contributed components
-- **Public APIs** - Integration endpoints for developers
+Text Shield Chatroom is a secure real-time communication platform that enables safe online messaging among users. This public repository contains the community-friendly components of the project. The system features automated abuse detection using machine learning and keyword filtering to prevent cyberbullying and inappropriate content in real-time.
 
-## 📁 Repository Structure
-```
-vc-chatroom-public/
-├── frontend/          # React-based chat interface
-│   ├── components/    # Reusable UI components
-│   ├── pages/         # Main chat pages
-│   └── utils/         # Public utility functions
-├── backend/           # Basic server implementation
-│   ├── routes/        # API endpoints
-│   ├── middleware/    # Public middleware
-│   └── models/        # Basic data models
-├── docs/              # Public documentation
-│   ├── api.md         # API documentation
-│   ├── setup.md       # Getting started guide
-│   └── contributing.md # Contribution guidelines
-└── examples/          # Usage examples and demos
-```
+## ✨ Key Features
+
+- **Real-time Chat Communication** - Users can send and receive messages instantly in defined chat rooms
+- **Automated Abuse Detection** - Messages are automatically screened using machine learning models and keyword filters
+- **Message Blocking and Feedback** - Abusive messages are blocked before delivery with immediate sender notification
+- **User-Friendly Interface** - Simple login with room ID and username, clean chat interface
+- **Session Management** - Users can start new chat sessions, exit gracefully, and manage room joining
+- **Chat History Management** - Save conversation history to files and clear chat windows
+- **Multi-User Support** - Supports multiple users across different devices on the same network
 
 ## 🛠 Technology Stack
-- **Frontend**: React.js, Socket.io-client, Material-UI
-- **Backend**: Node.js, Express.js, Socket.io
-- **Database**: MongoDB (basic schema)
-- **Authentication**: JWT tokens
-- **Text Processing**: Basic filtering algorithms
-- **Deployment**: Docker, GitHub Actions CI/CD
+
+- **Programming Language**: Python 3.x
+- **GUI Framework**: Tkinter (built-in Python GUI library)
+- **Networking**: Socket Programming (Python's socket module)
+- **Machine Learning**: scikit-learn
+- **Model Serialization**: joblib
+- **Text Processing**: Regular Expressions (re module)
+- **File Operations**: OS module
+- **Additional Libraries**: threading, datetime (Python standard library)
+
+## 📁 Repository Structure
+
+```
+text-shield-chatroom/
+├── src/
+│   ├── client.py          # Client-side GUI application
+│   ├── server.py          # Server implementation
+│   ├── text_classifier.py # Abuse detection module
+│   └── utils.py           # Utility functions
+├── models/
+│   ├── trained_model.pkl  # Pre-trained ML model
+│   └── vectorizer.pkl     # Text vectorizer
+├── data/
+│   └── keyword_filter.txt # Abusive keywords list
+├── docs/
+│   ├── setup.md          # Installation guide
+│   └── user_guide.md     # User manual
+└── tests/
+    ├── test_client.py    # Client tests
+    ├── test_server.py    # Server tests
+    └── test_classifier.py # ML model tests
+```
 
 ## 🚀 Quick Start
 
 ### Prerequisites
-- Node.js 16.x or higher
-- npm or yarn
-- MongoDB (local or cloud)
+
+- Python 3.8 or newer
+- Standard Python libraries (Tkinter, socket, os, re)
+- scikit-learn
+- joblib
 
 ### Installation
+
 ```bash
 # Clone the repository
 git clone https://github.com/abhi-parekar/vc-chatroom-public.git
 cd vc-chatroom-public
 
-# Install dependencies
-npm install
+# Install required packages
+pip install scikit-learn joblib
 
-# Set up environment variables
-cp .env.example .env
-# Edit .env with your configurations
+# Run the server
+python src/server.py
 
-# Start the application
-npm run dev
+# Run the client (in a new terminal)
+python src/client.py
 ```
 
 ### Basic Usage
-1. Open your browser to `http://localhost:3000`
-2. Register a new account or sign in
-3. Join a chat room
-4. Start messaging with text detection features
 
-## 📚 Documentation
-- [API Documentation](docs/api.md) - REST and WebSocket APIs
-- [Setup Guide](docs/setup.md) - Detailed installation instructions
-- [Contributing](docs/contributing.md) - How to contribute to the project
-- [Examples](examples/) - Code examples and demos
+1. Start the server by running `python src/server.py`
+2. Launch the client application with `python src/client.py`
+3. Enter a Room ID and Username to join a chat session
+4. Start messaging with real-time abuse detection
+5. Use Save Chat to export conversation history
+6. Use Clear Chat to clean the display
+7. Click Exit to leave the chatroom
 
-## 🤝 Contributing
-We welcome contributions from the community! Please see our [Contributing Guidelines](docs/contributing.md) for details on:
-- Code style and standards
-- Pull request process
-- Issue reporting
-- Feature requests
+## 🛡 Abuse Detection System
+
+The system employs a hybrid approach for detecting inappropriate content:
+
+- **Machine Learning Classification**: Trained scikit-learn model for context-based detection
+- **Keyword Filtering**: Regular expression-based pattern matching for explicit terms
+- **Real-time Processing**: Messages are filtered before delivery to recipients
+- **User Feedback**: Blocked messages trigger immediate warnings to senders
+
+## 📋 Requirements
+
+### Hardware Requirements
+- Processor: Intel Core i7/i9 or AMD Ryzen 7/9
+- RAM: 16GB or higher
+- Storage: 512GB or higher
+- Network: Wireless LAN adapter
+
+### Software Requirements
+- Operating System: Windows 10/11
+- Python Interpreter: Python 3.8 or newer
+- Editor/IDE: VSCode, Sublime Text, or IDLE
+- Network Configuration: Open TCP port (default 12345)
 
 ## 🔗 Related Repository
-- **Private Repository**: `vc-chatroom-private` - Contains advanced features, ML models, and proprietary text detection algorithms
 
-## 📊 Features Comparison
-
-| Feature | Public Repo | Private Repo |
-|---------|-------------|---------------|
-| Basic Chat | ✅ | ✅ |
-| User Auth | ✅ | ✅ |
-| Simple Text Filter | ✅ | ✅ |
-| Advanced ML Detection | ❌ | ✅ |
-| Sentiment Analysis | ❌ | ✅ |
-| Spam Detection | ❌ | ✅ |
-| Content Moderation AI | ❌ | ✅ |
-| Advanced Analytics | ❌ | ✅ |
-| Enterprise Features | ❌ | ✅ |
+- **Private Repository**: [vc-chatroom-private](https://github.com/abhi-parekar/vc-chatroom-private) - Contains complete implementation with advanced features and proprietary algorithms
 
 ## 📄 License
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-## 🆘 Support
-- 📖 Check the [documentation](docs/)
-- 🐛 Report issues on [GitHub Issues](https://github.com/abhi-parekar/vc-chatroom-public/issues)
-- 💬 Join our [community discussions](https://github.com/abhi-parekar/vc-chatroom-public/discussions)
+This project is licensed under the MIT License - see the LICENSE file for details.
 
-## 🌟 Community
-This project is open source and welcomes community contributions. Whether you're fixing bugs, adding features, or improving documentation, your contributions help make this project better for everyone.
+## 📞 Contact
+
+For technical support or questions about this project, please create an issue in this repository.
 
 ---
 
-**Note**: This public repository contains the community-friendly version of the Virtual Chatroom project. For advanced features including sophisticated text detection algorithms, machine learning models, and enterprise capabilities, please see the private repository (available to authorized contributors only).
+**Note**: This public repository contains the community version of the Text Shield Chatroom project. The complete implementation with advanced features is available in the private repository for authorized personnel only.
